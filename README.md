@@ -61,4 +61,16 @@ Apr 22 08:23:06 lnx001.ibreizh.lan systemd[1]: Started IPerf daemon.
 #### Stopped
 ```
 root@lnx001:~# systemctl status iperfd
+● iperfd.service - IPerf daemon
+   Loaded: loaded (/etc/systemd/system/iperfd.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Wed 2020-04-22 08:28:07 UTC; 1s ago
+  Process: 23414 ExecStart=/usr/bin/iperf3 --verbose --server --daemon --bind $IP_ADDRESS --port $PORT --logfile $LOG_FILE --pidfile $PID_FILE (code=exited, status=0/SUCCESS)
+ Main PID: 23416 (code=exited, status=1/FAILURE)
+
+Apr 22 08:23:06 lnx001.ibreizh.lan systemd[1]: Starting IPerf daemon...
+Apr 22 08:23:06 lnx001.ibreizh.lan systemd[1]: Started IPerf daemon.
+Apr 22 08:28:07 lnx001.ibreizh.lan systemd[1]: Stopping IPerf daemon...
+Apr 22 08:28:07 lnx001.ibreizh.lan systemd[1]: iperfd.service: Main process exited, code=exited, status=1/FAILURE
+Apr 22 08:28:07 lnx001.ibreizh.lan systemd[1]: iperfd.service: Failed with result 'exit-code'.
+Apr 22 08:28:07 lnx001.ibreizh.lan systemd[1]: Stopped IPerf daemon.
 ```
