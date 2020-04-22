@@ -8,9 +8,11 @@ User=root
 PIDFile=/var/run/iperfd.pid
 EnvironmentFile=/etc/default/iperfd
 ExecStart=/usr/bin/iperf3 --verbose --server --daemon --bind $IP_ADDRESS --port $PORT --logfile $LOG_FILE --pidfile $PID_FILE
+ExecStartPost=/bin/sleep 1
 Restart=on-failure
 RestartSec=10
 KillMode=process
+SuccessExitStatus=1
 
 [Install]
 WantedBy=multi-user.target
