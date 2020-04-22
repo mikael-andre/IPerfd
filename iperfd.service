@@ -3,10 +3,11 @@ Description=IPerf daemon
 After=syslog.target network-online.target
 
 [Service]
-Type=simple
+Type=forking
 User=root
+PIDFile=/var/run/iperfd.pid
 EnvironmentFile=/etc/default/iperfd
-ExecStart=/usr/bin/iperf3 --verbose --server --daemon --bind $IP_ADDRESS --port $PORT --logfile $LOG_FILE
+ExecStart=/usr/bin/iperf3 --verbose --server --daemon --bind $IP_ADDRESS --port $PORT --logfile $LOG_FILE --pidfile $PID_FILE
 Restart=on-failure
 RestartSec=10
 KillMode=process
