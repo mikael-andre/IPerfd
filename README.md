@@ -2,7 +2,9 @@
 This how-to aims to start IPerf as a daemon.
 ## Prerequisite
 Before making anything, you must install IPerf package:
+```
 sudo apt install iperf3
+```
 
 The operating system is Ubuntu server 18.04.4 LTS
 ## Installation
