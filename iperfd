@@ -1,0 +1,6 @@
+# bind to a specific interface
+IP_ADDRESS=172.16.1.1
+# server port to listen on
+PORT=5201
+# send output to a log file
+LOG_FILE=/var/log/iperfd.log
