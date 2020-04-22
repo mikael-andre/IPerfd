@@ -46,6 +46,17 @@ By the same command, `systemctl status iperfd`, you can verify if IPerfd is star
 #### Started
 ```
 root@lnx001:~# systemctl status iperfd
+● iperfd.service - IPerf daemon
+   Loaded: loaded (/etc/systemd/system/iperfd.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2020-04-22 08:23:06 UTC; 3min 57s ago
+  Process: 23414 ExecStart=/usr/bin/iperf3 --verbose --server --daemon --bind $IP_ADDRESS --port $PORT --logfile $LOG_FILE --pidfile $PID_FILE (code=exited, status=0/SUCCESS)
+ Main PID: 23416 (iperf3)
+    Tasks: 1 (limit: 2353)
+   CGroup: /system.slice/iperfd.service
+           └─23416 /usr/bin/iperf3 --verbose --server --daemon --bind 172.16.1.1 --port 5201 --logfile /var/log/iperfd.log --pidfile /var/run/iperfd.pid
+
+Apr 22 08:23:06 lnx001.ibreizh.lan systemd[1]: Starting IPerf daemon...
+Apr 22 08:23:06 lnx001.ibreizh.lan systemd[1]: Started IPerf daemon.
 ```
 #### Stopped
 ```
